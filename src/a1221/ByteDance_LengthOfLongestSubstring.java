@@ -1,9 +1,7 @@
 package a1221;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * 给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。
@@ -28,7 +26,7 @@ import java.util.Set;
  *      请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。
  *      <a href="https://leetcode.cn/problems/longest-substring-without-repeating-characters/?envType=study-plan&id=zijie&plan=7d_zijie&plan_progress=yg0e3md">...</a>
  */
-public class ByteJump_LengthOfLongestSubstring {
+public class ByteDance_LengthOfLongestSubstring {
     public static int lengthOfLongestSubstring(String s) {
         if(s==null){
             return 0;
@@ -50,9 +48,9 @@ public class ByteJump_LengthOfLongestSubstring {
     }
 
     public static void main(String[] args) {
-        System.out.println(ByteJump_LengthOfLongestSubstring.lengthOfLongestSubstring("abcabcbb"));
-        System.out.println(ByteJump_LengthOfLongestSubstring.lengthOfLongestSubstring("bbbbb"));
-        System.out.println(ByteJump_LengthOfLongestSubstring.lengthOfLongestSubstring("pwwkew"));
-        System.out.println(ByteJump_LengthOfLongestSubstring.lengthOfLongestSubstring("au"));
+        System.out.println(ByteDance_LengthOfLongestSubstring.lengthOfLongestSubstring("abcabcbb"));
+        System.out.println(ByteDance_LengthOfLongestSubstring.lengthOfLongestSubstring("bbbbb"));
+        System.out.println(ByteDance_LengthOfLongestSubstring.lengthOfLongestSubstring("pwwkew"));
+        System.out.println(ByteDance_LengthOfLongestSubstring.lengthOfLongestSubstring("au"));
     }
 }
