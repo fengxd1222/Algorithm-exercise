@@ -29,6 +29,67 @@ public class ByteDance_FindKthLargest {
         return nums[nums.length-k];
     }
 
+    /**
+     * 快速排序
+     * @param nums
+     * @param k
+     * @return
+     */
+    public int findKthLargest1(int[] nums, int k) {
+        if(nums==null|| nums.length==0 || k>nums.length){
+            return 0;
+        }
+
+        int target = nums.length - k;
+        int left=0;
+        int right=nums.length-1;
+
+        while (true){
+            int partIndex = partition(nums,left,right);
+            if(partIndex==target){
+                return nums[target];
+            }else if(partIndex>target){
+                right = partIndex-1;
+            }else {
+                left = partIndex+1;
+            }
+        }
+    }
+
+    private int partition(int[] nums, int left, int right) {
+        int randomIndex = (int)(Math.random()*(right-left+1))+left;
+        swap(nums,randomIndex,right);
+
+        int less = left-1;
+        int more = right;
+        int index = left;
+
+        while (index<more){
+            if(nums[index]==nums[right]){
+                index++;
+            }else if(nums[index]<nums[right]){
+                less++;
+                swap(nums,index,less);
+                index++;
+            }else {
+                more--;
+                swap(nums,index,more);
+            }
+        }
+        swap(nums,more,right);
+        return less+1;
+    }
+
+
+    private void swap(int[] nums, int left, int right) {
+        int temp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = temp;
+    }
+
+
+
+    //归并排序
     private void process(int[] nums, int L,  int R) {
         if(L==R){
             return;
@@ -61,8 +122,24 @@ public class ByteDance_FindKthLargest {
         }
     }
 
+    public void test(int i,int j){
+        System.out.println(i);
+        System.out.println(j);
+    }
+
     public static void main(String[] args) {
         ByteDance_FindKthLargest a = new ByteDance_FindKthLargest();
         System.out.println(a.findKthLargest(new int[]{3,2,1,5,6,4},2));
+        System.out.println(a.findKthLargest1(new int[]{3,2,1,5,6,4},2));
+        System.out.println(a.findKthLargest1(new int[]{3,2,3,1,2,4,5,5,6},4));
+        System.out.println(a.findKthLargest1(new int[]{2,1},1));
+
+
     }
+
+    //归并排序
+
+
+
+
 }

@@ -52,5 +52,6 @@ public class ByteDance_LengthOfLongestSubstring {
         System.out.println(ByteDance_LengthOfLongestSubstring.lengthOfLongestSubstring("bbbbb"));
         System.out.println(ByteDance_LengthOfLongestSubstring.lengthOfLongestSubstring("pwwkew"));
         System.out.println(ByteDance_LengthOfLongestSubstring.lengthOfLongestSubstring("au"));
+        System.out.println(ByteDance_LengthOfLongestSubstring.lengthOfLongestSubstring("abba"));
     }
 }
