@@ -1,5 +1,7 @@
 package common;
 
+import java.sql.SQLOutput;
+
 /**
  * 排序
  */
@@ -56,7 +58,7 @@ public class Sort {
 
         int less = left-1;
         int more = right;
-        int index=0;
+        int index=left;
         while (index<more){
             if(nums[index]==nums[right]){
                 index++;
@@ -77,7 +79,7 @@ public class Sort {
         if(left>=right)return;
 
         int m = partition(nums,left,right);
-        processForQuickSort_1(nums,left,m);
+        processForQuickSort_1(nums,left,m-1);
         processForQuickSort_1(nums,m+1,right);
     }
 
@@ -150,5 +152,11 @@ public class Sort {
         for (int i = 0; i < merge.length; i++) {
             nums[left+i] = merge[i];
         }
+    }
+
+
+    public static void main(String[] args) {
+        Sort sort = new Sort();
+        sort.quickSort(new int[]{1, 2, 3, 2, 2, 2, 5, 4, 2});
     }
 }
